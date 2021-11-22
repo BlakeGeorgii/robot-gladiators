@@ -42,7 +42,14 @@ var fight = function() {
     }
   }
   else if(promptFight === "SKIP" || promptFight === "skip"){
-    window.alert("You have chosen to skip the fight.");
+    var confirmSkip = window.confirm("Are you sure you would like to quit?");
+    if(confirmSkip){
+      window.alert(playerName + " has decided to skip this fight. Goodbye!");
+      playerMoney = playerMoney - 2;
+    }
+    else{
+      fight();
+    }
   }
   else{
     window.alert("Invlaid input please choose to either 'FIGHT' or 'SKIP'");
